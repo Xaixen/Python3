@@ -1,0 +1,5 @@
+al = int(input('quanto dias alugados:'))
+km = float(input('quantos Km pecorridos:'))
+v = (al * 60) + (km * 0.15)
+print('Valor dias alugados R${:.2f}\nValor Km pecorridos R${}'.format(al*60, km*0.15))
+print('Valor Valor total:R$', v)

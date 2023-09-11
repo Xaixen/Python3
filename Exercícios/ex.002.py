@@ -1,0 +1,7 @@
+a = input('digite algo:')
+print('Tipo de classe primitiva', type(a))
+print('È um alfabeto?',a.isalpha())
+print('o valor é um alfanumerico?',a.isalnum())
+print('O valor são letrar maisuculas?',a.isupper())
+print('o valor sao letras minusculas',a.islower())
+print('estar capitalizada', a.istitle())
