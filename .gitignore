@@ -153,7 +153,6 @@ cython_debug/
 Exercícios 3/PDF/Mentoria Exercícios Fundamentos Python-20230626T195644Z-001.zip
 *.zip
 *.ico
-*.ipynb
 *.csv
 *.pdf
 *.xlsx
