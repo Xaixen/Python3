@@ -1,4 +1,3 @@
-
 #Importando as bibliotecas
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -6,11 +5,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 
 print('\33[42m-=' * 40, '\33[m')
-print(f'\33[1;42m{"AUTOMAÇÃO DE WHATSSAP":^80}', '\33[m')
+print(f'\33[1;42m{"AUTOMAÇÃO DE WHATSAPP":^80}', '\33[m')
 print('\33[42m-=' * 40, '\33[0m')
 print()
-mensagem = (input('Digite a mensagem para enviar: '))
-print('Processando...')
+sleep(1)
+print('\33[1mIniciando...\33[0m')
 try:
     service = Service(ChromeDriverManager().install())
     nav =  webdriver.Chrome(service=service)
@@ -21,7 +20,7 @@ except PermissionError:
 for c in range(100):
     sleep(0.3)
 print('-=' * 40)
-print('\33[1;33mApós logar no whatssap aperte ENTER para começar!\33[0m')
+print('\33[1;33mApós logar no whatsapp aperte ENTER para começar!\33[0m')
 print('-=' * 40)
 input()
 sleep(1.2)
@@ -40,8 +39,11 @@ for c in range(7):
 sleep(1)
 #Rolando para baixo
 nav.find_element('xpath', '/html').send_keys(Keys.TAB)
+sleep(0.1)
 nav.find_element('xpath', '/html').send_keys(Keys.TAB)
+sleep(0.1)
 nav.find_element('xpath', '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[2]/div[1]').send_keys(Keys.TAB)
+sleep(0.1)
 nav.find_element('xpath', '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[2]/div[3]').send_keys(Keys.TAB)
 #Coletando contatos
 lista = list()
@@ -50,7 +52,7 @@ print('\33[1;33mColetando contatos...\33[0m')
 for c in range(100):
     nav.find_element('xpath', '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[2]/div[5]/div').send_keys(Keys.PAGE_DOWN)
     nav.find_element('xpath', '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[2]/div[5]/div').send_keys(Keys.PAGE_DOWN)
-    sleep(0.1)
+    sleep(0.2)
     contato = nav.find_elements('class name', '_21S-L')
     for item in contato:
         nome = item.text.replace('\n', '')
@@ -62,7 +64,6 @@ for c in range(100):
         break
     lista_reserva = lista[:]
 print('\33[1;33mContatos carregados\33[0m')
-print()
 sleep(0.9)
 nav.find_element('xpath', '/html').send_keys(Keys.ESCAPE)
 sleep(0.9)   
@@ -71,12 +72,16 @@ sleep(0.3)
 nav.find_element('xpath', '//*[@id="side"]/div[1]/div/div/div[2]/div/div[1]/p').send_keys(Keys.ENTER)
 sleep(0.2)
 # escrever a mensagem para nós mesmos
-nav.find_element('xpath', '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p').send_keys(mensagem)
-sleep(2.5)
-nav.find_element('xpath', '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p').send_keys(Keys.ENTER)
+print('\33[1;32;40m-=' * 40)
+print(f'{"Escreva sua mensagem normalmente e envie para você mesmo!":^80}')
+print('-=' * 40,'\33[0m')
+sleep(4)
 
 from selenium.webdriver.common.action_chains import ActionChains
-#gerador de blocos para mandar de 5 em 5 
+print('\33[1;33mAperte ENTER para enviar para seus contatos\33[0m')
+input()
+sleep(1.5)
+#Gerador de blocos para mandar de 5 em 5 
 qntd_contatos = len(lista)
 if qntd_contatos % 5 == 0:
     qntd_blocos = int(qntd_contatos / 5)
@@ -92,17 +97,29 @@ for i in range(qntd_blocos):
     lista_elementos = nav.find_elements('class name','_2AOIt')
     for elemento in lista_elementos:
         texto = elemento.text.replace('\n', '')
-        recado = mensagem.replace('\n', '')
-        if recado in texto:
+        if texto:
             item = elemento
+
+    #classe da setinha
     ActionChains(nav).move_to_element(item).perform()
-    elemento.find_element('class name', '_3u9t-').click()
-    sleep(0.3)
-    nav.find_element('xpath', '//*[@id="app"]/div/span[4]/div/ul/div/li[4]/div').click()
-    sleep(1.3)
-    nav.find_element('xpath', '//*[@id="main"]/span[2]/div/button[4]/span').click()
-    sleep(1.0)
-#selecionar de 5 contatos para enviar
+    sleep(0.1)
+    try:
+        item.find_element('class name', '_3u9t-').click()
+        sleep(0.3)
+        nav.find_element('xpath', '//*[@id="app"]/div/span[4]/div/ul/div/li[4]/div').click()
+        sleep(1.6)
+        nav.find_element('xpath', '//*[@id="main"]/span[2]/div/button[4]').click()
+        sleep(2.0)
+    except:
+        pass
+        item.find_element('class name', '_3Gzl9').click()
+        sleep(0.3)
+        nav.find_element('xpath', '//*[@id="app"]/div/span[4]/div/ul/div/li[5]/div').click()
+        sleep(1.6)
+        nav.find_element('xpath', '//*[@id="main"]/span[2]/div/button[4]').click()
+        sleep(2.0)  
+        
+#selecionar 5 contatos para enviar
     for name in lista_enviar:
         pyperclip.copy(name)
         nav.find_element('xpath', '//*[@id="app"]/div/span[2]/div/div/div/div/div/div/div/div[1]/div/div/div[2]/div/div[1]/p').send_keys(Keys.CONTROL + 'v')
@@ -116,7 +133,8 @@ for i in range(qntd_blocos):
     nav.find_element('xpath', '//*[@id="app"]/div/span[2]/div/div/div/div/div/div/div/span/div/div/div').click()
     sleep(3)
     print(f'\33[1;33m{i+1}º Bloco enviado\33[0m')
-for c in range(2):
+    sleep(1.2)
+for c in range(3):
     nav.find_element('xpath', '/html').send_keys(Keys.ESCAPE)
     sleep(0.5)
 print()
