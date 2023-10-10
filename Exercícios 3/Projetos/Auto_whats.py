@@ -17,8 +17,7 @@ try:
 except PermissionError:
     print('\33[1;31mPermissão Negada, tente novamente mais tarde!\33[0m')
     raise
-for c in range(100):
-    sleep(0.3)
+sleep(30)
 print('-=' * 40)
 print('\33[1;33mApós logar no whatsapp aperte ENTER para começar!\33[0m')
 print('-=' * 40)
