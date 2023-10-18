@@ -1,7 +1,7 @@
 import flet as ft
 
 def main(pagina):
-    texto = ft.Text('Xablazap', size=20)
+    texto = ft.Text('Xablazap', size=100)
     chat = ft.Column()
     nome_usuario = ft.TextField(label='Escreva seu nome')
     
@@ -47,4 +47,4 @@ def main(pagina):
     botao = ft.ElevatedButton('Iniciar chat', on_click=entrar_chat)
     pagina.add(texto)
     pagina.add(botao)
-ft.app(target=main, view=ft.WEB_BROWSER, port=8000)
+ft.app(target=main)
