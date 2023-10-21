@@ -3,12 +3,15 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
+import database
 
 print('\33[42m-=' * 40, '\33[m')
 print(f'\33[1;42m{"AUTOMAÇÃO DE WHATSAPP":^80}', '\33[m')
 print('\33[42m-=' * 40, '\33[0m')
 print()
+database.login()
 sleep(1)
+print('--' * 10)
 print('\33[1mIniciando...\33[0m')
 try:
     service = Service(ChromeDriverManager().install())
