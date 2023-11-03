@@ -17,8 +17,8 @@ def login():
             print('--' * 10)
             print(f'{"LOGIN":^20}')
             print('--' * 10)
-            nome = input('nome:')
-            senha = input('senha:')
+            nome = input('Nome: ')
+            senha = input('Senha: ')
             cursor = conexao.cursor()
             cursor.execute(f'SELECT * FROM login WHERE nome=%s AND senha=%s;', (nome, senha))
             user = cursor.fetchone()
@@ -41,6 +41,3 @@ def login():
                 raise 
             else:
                 print('\33[1;33mUsuário não encontrado\33[0m')
-            
-            
-login()
