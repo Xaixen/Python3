@@ -17,7 +17,7 @@ def login():
             print('--' * 10)
             print(f'{"LOGIN":^20}')
             print('--' * 10)
-            nome = input('Nome: ')
+            nome = input('Usuário: ')
             senha = input('Senha: ')
             cursor = conexao.cursor()
             cursor.execute(f'SELECT * FROM login WHERE nome=%s AND senha=%s;', (nome, senha))

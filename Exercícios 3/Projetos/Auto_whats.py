@@ -34,7 +34,7 @@ nav.find_element('xpath', '//*[@id="app"]/div/div/div[4]/header/div[2]/div/span/
 sleep(0.4)
 nav.find_element('xpath', '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[1]/div/div[2]/div/div[1]/p').send_keys('(você)')
 sleep(0.5)
-meu_numero = nav.find_element('xpath', '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[2]/div/div/div/div[2]/div/div/div[2]/div/div[1]/span[1]').text
+meu_numero = nav.find_element('xpath', '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[2]/div/div/div/div[2]/div/div/div[2]/div/div[1]/div/span[1]').text
 meu_numero = meu_numero + '(você)'
 for c in range(7):
     nav.find_element('xpath', '//*[@id="app"]/div/div/div[3]/div[1]/span/div/span/div/div[1]/div/div[2]/div/div[1]/p').send_keys(Keys.BACKSPACE)
@@ -75,7 +75,7 @@ nav.find_element('xpath', '//*[@id="side"]/div[1]/div/div/div[2]/div/div[1]/p').
 sleep(0.2)
 # escrever a mensagem para nós mesmos
 print('\33[1;32;40m-=' * 40)
-print(f'{"Escreva sua mensagem normalmente e envie para você mesmo!":^80}')
+print(f'{"Faça sua mensagem normalmente e envie para você mesmo!":^80}')
 print('-=' * 40,'\33[0m')
 sleep(4)
 
