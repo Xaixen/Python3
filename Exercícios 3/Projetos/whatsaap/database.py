@@ -28,7 +28,7 @@ def login():
                 cursor.execute(f'SELECT expirado FROM login WHERE nome=%s AND senha=%s;', (nome, senha))
                 mostrar = cursor.fetchone()
                 print('\33[1;32mlogado com sucesso\33[0m')
-                if agora == mostrar:
+                if agora >= mostrar:
                     cursor.execute(f'DELETE FROM login WHERE nome=%s AND senha=%s;', (nome, senha))
                     conexao.commit()
                     cursor.close()
