@@ -4,7 +4,6 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 
-
 print('\33[30;42m-=' * 40, '\33[m')
 print(f'\33[1;30;42m{"AUTOMAÇÃO DE WHATSAPP":^80}', '\33[m')
 print('\33[30;42m-=' * 40, '\33[0m')

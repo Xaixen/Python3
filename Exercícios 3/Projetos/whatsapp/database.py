@@ -40,4 +40,4 @@ def login():
                 print(f'\33[1;31m{c}º tentativa, fale com o ADM e crie um novo Usuário.\33[0m')
                 raise 
             else:
-                print('\33[1;33mUsuário não encontrado\33[0m')
+                print('\33[1;33mUsuário não encontrado\33[0m')    
