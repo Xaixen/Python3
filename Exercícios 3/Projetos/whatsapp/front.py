@@ -43,20 +43,24 @@ from time import sleep
 from selenium.webdriver.common.keys import Keys
 import pyperclip
 def navegador():
-    
+    janela.botao_iniciar.deleteLater()
+    janela.update()
     try:
         service = Service(ChromeDriverManager().install())
         nav =  webdriver.Chrome(service=service)
         nav.get('https://web.whatsapp.com')
         janela.false_2.setText('ok')
+        
     except PermissionError:
         janela.false_2.setText('Permissao Negada')
+        sleep(5)
         raise
-
+         
 app = QtWidgets.QApplication([])
 janela = uic.loadUi("interface_grafica.ui")
-janela.gerenciador_telas.setCurrentWidget(janela.login)
+#janela.gerenciador_telas.setCurrentWidget(janela.login)
 janela.botao_entrar.clicked.connect(login)
 janela.botao_iniciar.clicked.connect(navegador)
+
 janela.show()
 sys.exit(app.exec_())

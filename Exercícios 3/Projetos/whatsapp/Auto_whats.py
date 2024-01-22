@@ -8,8 +8,6 @@ print('\33[30;42m-=' * 40, '\33[m')
 print(f'\33[1;30;42m{"AUTOMAÇÃO DE WHATSAPP":^80}', '\33[m')
 print('\33[30;42m-=' * 40, '\33[0m')
 print()
-import database
-database.login()
 sleep(1)
 print('--' * 10)
 print('\33[1mIniciando...\33[0m')
