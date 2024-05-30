@@ -3,7 +3,7 @@
 * Exercícios
 * PDF
 * Videos
-* Projetos
+* [Projetos](https://github.com/Xaixen/Python3/tree/main/Exerc%C3%ADcios%203/Projetos)
 
 ## Vídeos aulas
 1. [Python Insigths](https://youtu.be/8XbjhM0xXZs?si=CWSPygoosSaDhQaF)
