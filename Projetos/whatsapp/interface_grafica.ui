@@ -201,7 +201,7 @@ border-radius: 20px;</string>
          <rect>
           <x>140</x>
           <y>30</y>
-          <width>281</width>
+          <width>291</width>
           <height>91</height>
          </rect>
         </property>
@@ -216,7 +216,7 @@ border-radius: 20px;</string>
          <string notr="true">color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>Mensagem de massa</string>
+         <string>Mensagem em massa</string>
         </property>
        </widget>
        <widget class="QFrame" name="frame">
@@ -378,7 +378,7 @@ background-color: rgb(241, 241, 241);</string>
 background-color: rgb(241, 241, 241);</string>
             </property>
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Conta&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Coletar Contatos&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -486,36 +486,6 @@ background-color: rgb(241, 241, 241);</string>
          <layout class="QVBoxLayout" name="verticalLayout_10">
           <item>
            <widget class="QLabel" name="false_1">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(241, 241, 241);
-color: rgb(26, 13, 165);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;False&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QWidget" name="verticalLayoutWidget_10">
-         <property name="geometry">
-          <rect>
-           <x>220</x>
-           <y>70</y>
-           <width>251</width>
-           <height>50</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_11">
-          <item>
-           <widget class="QLabel" name="false_2">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
@@ -682,29 +652,65 @@ border-radius: 20px;</string>
           <string>Iniciar</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="botao_QRcode">
+        <widget class="QWidget" name="verticalLayoutWidget_16">
          <property name="geometry">
           <rect>
            <x>220</x>
-           <y>112</y>
+           <y>70</y>
            <width>251</width>
            <height>41</height>
           </rect>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(241, 241, 241);
+         <layout class="QVBoxLayout" name="verticalLayout_17">
+          <item>
+           <widget class="QLabel" name="false_2">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(241, 241, 241);
 color: rgb(26, 13, 165);</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;False&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget_17">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>110</y>
+           <width>251</width>
+           <height>41</height>
+          </rect>
          </property>
-         <property name="text">
-          <string>False</string>
-         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_18">
+          <item>
+           <widget class="QLabel" name="false_3">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(241, 241, 241);
+color: rgb(26, 13, 165);</string>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;False&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </widget>
       </widget>
